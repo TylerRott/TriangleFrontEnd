@@ -1,24 +1,27 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { UserContext } from '../contexts/UserContext'; // 👈 import the context
+import { UserContext } from '../contexts/UserContext';
 
 const Header = () => {
-  const { user } = useContext(UserContext); // 👈 get user info
+  const { user } = useContext(UserContext);
 
   return (
-    <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem' }}>
-      <div>
-        <h1>Texas A&M Triangle Fraternity</h1>
-        {user && <p style={{ margin: 0 }}>Hi, {user.name}!</p>} {'Greetings from Triangle!'}
+    <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem', backgroundColor: '#800000', color: 'white' }}>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <img src="/triangle.png" alt="Triangle Logo" style={{ height: '50px', marginRight: '1rem' }} />
+        <div>
+          <h1 style={{ margin: 0 }}>Texas A&M Triangle Fraternity</h1>
+          {user && <p style={{ margin: 0 }}>Hi, {user.name}!</p>}
+        </div>
       </div>
       <nav>
-        <ul style={{ display: 'flex', gap: '1rem', listStyle: 'none' }}>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/history">History</Link></li>
-          <li><Link to="/membership">Membership</Link></li>
-          <li><Link to="/dues">Dues & Payments</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
-          <li><Link to="/login">Login</Link></li>
+        <ul style={{ display: 'flex', gap: '1rem', listStyle: 'none', margin: 0, padding: 0 }}>
+          <li><Link to="/"><button>Home</button></Link></li>
+          <li><Link to="/history"><button>History</button></Link></li>
+          <li><Link to="/membership"><button>Membership</button></Link></li>
+          <li><Link to="/dues"><button>Dues & Payments</button></Link></li>
+          <li><Link to="/contact"><button>Contact</button></Link></li>
+          <li><Link to="/login"><button>Login</button></Link></li>
         </ul>
       </nav>
     </header>

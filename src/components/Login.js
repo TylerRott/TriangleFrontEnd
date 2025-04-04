@@ -66,7 +66,7 @@ const Login = () => {
     <div>
       <h2>{user ? `Welcome, ${user.name}` : 'Login'}</h2>
       {user ? (
-        <button onClick={handleLogout}>Logout</button>
+        <button onClick={handleLogout}>Logout</button> // Directly logs out the user
       ) : (
         <div id="googleSignInDiv"></div>
       )}

@@ -6,7 +6,7 @@ const Header = () => {
   const { user } = useContext(UserContext);
 
   return (
-    <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem', backgroundColor: '#800000', color: 'white' }}>
+    <header className="App-header"> {/* Apply the App-header class */}
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <img src="/triangle.png" alt="Triangle Logo" style={{ height: '50px', marginRight: '1rem' }} />
         <div>

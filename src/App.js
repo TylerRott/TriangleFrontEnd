@@ -7,22 +7,25 @@ import Membership from './components/Membership';
 import Dues from './components/Dues';
 import Contact from './components/Contact';
 import Login from './components/Login';
+import './App.css'; // Import your CSS file
 
 function App() {
   return (
-    <Router>
-      <Header />
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/history" element={<History />} />
-          <Route path="/membership" element={<Membership />} />
-          <Route path="/dues" element={<Dues />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
-      </div>
-    </Router>
+    <div className="App">
+      <Router>
+        <Header /> {/* The Header component will handle its own styles */}
+        <div className="container">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/history" element={<History />} />
+            <Route path="/membership" element={<Membership />} />
+            <Route path="/dues" element={<Dues />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </div>
+      </Router>
+    </div>
   );
 }
 

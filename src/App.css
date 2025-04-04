@@ -1,38 +1,69 @@
-.App {
+/* App.css */
+
+/* Global styles for the entire page */
+body, html, #root, .App {
+  background: linear-gradient(to bottom, #900000, #4d4d4d); /* Grey to maroon gradient */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  color: white;
+  font-family: sans-serif;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
+/* Header styles */
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #7e0001; /* Solid maroon color for the header */
+  margin: 20px; /* Add a 20-pixel margin around the header */
+  border-radius: 10px; /* Optional: Add rounded corners */
+  height: 80px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between; /* Space between logo and buttons */
+  padding: 0 20px; /* Add padding inside the header */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a slightly bolder shadow for emphasis */
+  color: white; /* Ensure text is visible on the solid background */
 }
 
-.App-link {
-  color: #61dafb;
+/* Logo styles */
+.App-header img {
+  height: 50px; /* Adjust logo size */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Navigation styles */
+.App-header nav ul {
+  display: flex;
+  gap: 1rem; /* Add spacing between buttons */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.App-header nav ul li {
+  margin: 0;
+}
+
+.App-header nav ul li button {
+  background-color: white; /* Button background */
+  color: #800000; /* Maroon text */
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.App-header nav ul li button:hover {
+  background-color: #d9d9d9; /* Light gray on hover */
+}
+
+.App-header nav ul li button:active {
+  background-color: #b3b3b3; /* Slightly darker gray on click */
+  transform: scale(0.98); /* Slightly shrink button on click */
+}
+
+/* Container styles */
+.container {
+  padding: 2rem;
 }

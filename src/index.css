@@ -18,10 +18,12 @@ html, body {
 }
 
 #root {
-  min-height: 100%; /* Ensure the React root element also takes up the full height */
+  min-height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: #800000; /* Maroon background */
 }
+
 
 .container {
   flex: 1; /* Allow the container to grow and fill available space */

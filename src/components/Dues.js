@@ -22,7 +22,8 @@ const Dues = () => {
       if (!querySnapshot.empty) {
         const userDoc = querySnapshot.docs[0]; // Get the first matching document
         const paymentStatus = userDoc.data().PaymentStatus; // Assuming 'PaymentStatus' is the field name
-        alert(`Payment Status: ${paymentStatus}`); // Show the payment status in a popup
+        const amountPaid = userDoc.data().AmountPaid; // Assuming 'AmountPaid' is the field name
+        alert(`Payment Status: ${paymentStatus} \nAmount paid: ${amountPaid}`); // Show the payment status in a popup
       } else {
         alert('No payment record found for this user.');
       }

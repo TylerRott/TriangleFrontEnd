@@ -1,12 +1,26 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
+import axios from 'axios';
 
 const Header = () => {
-  const { user } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
+
+  const handleLogout = () => {
+    axios
+      .post(`${process.env.REACT_APP_BACKEND_URL}/auth/logout`, {}, { withCredentials: true })
+      .then(() => {
+        setUser(null); // Clear the user from context
+        window.location.href = '/'; // Redirect to the homepage
+      })
+      .catch((err) => {
+        console.error("Logout error:", err);
+        alert("Failed to log out. Please try again.");
+      });
+  };
 
   return (
-    <header className="App-header"> {/* Apply the App-header class */}
+    <header className="App-header">
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <img src="/triangle.png" alt="Triangle Logo" style={{ height: '50px', marginRight: '1rem' }} />
         <div>
@@ -21,7 +35,11 @@ const Header = () => {
           <li><Link to="/membership"><button>Membership</button></Link></li>
           <li><Link to="/dues"><button>Dues & Payments</button></Link></li>
           <li><Link to="/contact"><button>Contact</button></Link></li>
-          <li><Link to="/login"><button>Login</button></Link></li>
+          {user ? (
+            <li><button onClick={handleLogout}>Logout</button></li>
+          ) : (
+            <li><Link to="/login"><button>Login</button></Link></li>
+          )}
         </ul>
       </nav>
     </header>
